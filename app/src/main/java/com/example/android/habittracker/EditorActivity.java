@@ -13,6 +13,10 @@ import android.widget.Toast;
 import com.example.android.habittracker.data.HabitContract;
 import com.example.android.habittracker.data.HabitDbHelper;
 
+
+/**
+ * Allows user to add a new habit entry or edit an existing one
+ */
 public class EditorActivity extends AppCompatActivity {
 
     /** EditText field to enter the run distance in miles */
@@ -96,7 +100,7 @@ public class EditorActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to a click on the "Save" menu option
             case R.id.action_save:
-                // Save pet to database
+                // Save habit to database
                 insertHabit();
                 // Exit activity
                 finish();
