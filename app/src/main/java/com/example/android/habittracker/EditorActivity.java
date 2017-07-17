@@ -28,7 +28,6 @@ public class EditorActivity extends AppCompatActivity {
     /** EditText field to enter the walk distance in miles */
     private EditText mWalkingEditText;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +37,6 @@ public class EditorActivity extends AppCompatActivity {
         mRunningEditText = (EditText) findViewById(R.id.edit_run);
         mGymEditText = (EditText) findViewById(R.id.edit_gym);
         mWalkingEditText = (EditText) findViewById(R.id.edit_walk);
-
     }
 
     /**
@@ -72,14 +70,13 @@ public class EditorActivity extends AppCompatActivity {
         values.put(HabitContract.HabitEntry.COLUMN_GYM, gymString);
         values.put(HabitContract.HabitEntry.COLUMN_WALKING, walkLength);
 
-
         // Insert a new row for habit in the database, returning the ID of that new row.
         long newRowId = db.insert(HabitContract.HabitEntry.TABLE_NAME, null, values);
 
         // Show a toast message depending on whether or not the insertion was successful
         if (newRowId == -1) {
             // If the row ID is -1, then there was an error with insertion.
-            Toast.makeText(this, "Error with saving habir", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error with saving habit", Toast.LENGTH_SHORT).show();
         } else {
             // Otherwise, the insertion was successful and we can display a toast with the row ID.
             Toast.makeText(this, "Habit saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();

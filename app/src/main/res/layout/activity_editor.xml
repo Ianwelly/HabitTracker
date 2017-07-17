@@ -20,7 +20,7 @@
     android:padding="@dimen/activity_margin"
     tools:context=".EditorActivity">
 
-    <!-- Overview category -->
+    <!-- Run Activity -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,62 +31,35 @@
             android:text="@string/text_view_run"
             style="@style/CategoryStyle" />
 
-        <!-- Name field -->
+        <!-- Run miles field -->
         <EditText
             android:id="@+id/edit_run"
-            android:hint="@string/hint_miles"
-            android:inputType="textCapWords"
+            android:hint="@string/hint_running_miles"
+            android:inputType="number"
             style="@style/EditorFieldStyle" />
+    </LinearLayout>
 
         <!-- Input fields -->
         <LinearLayout
             android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:paddingLeft="4dp"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
 
+            <!-- Label -->
+            <TextView
+                android:id="@+id/text_view_gym"
+                android:text="Gym"
+                style="@style/CategoryStyle" />
 
-
-            <!-- Breed field -->
+            <!-- Gym Activity field -->
             <EditText
                 android:id="@+id/edit_gym"
-                android:hint="@string/hint_pet_breed"
+                android:hint="@string/hint_gym_activity"
                 android:inputType="textCapWords"
                 style="@style/EditorFieldStyle" />
         </LinearLayout>
-    </LinearLayout>
 
-    <!-- Gender category -->
-    <LinearLayout
-        android:id="@+id/container_gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <!-- Label -->
-        <TextView
-            android:text="@string/category_gender"
-            style="@style/CategoryStyle" />
-
-        <!-- Input field -->
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:orientation="vertical">
-
-            <!-- Gender drop-down spinner -->
-            <Spinner
-                android:id="@+id/spinner_gender"
-                android:layout_height="48dp"
-                android:layout_width="wrap_content"
-                android:paddingRight="16dp"
-                android:spinnerMode="dropdown"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Measurement category -->
+    <!-- Walking category -->
     <LinearLayout
         android:id="@+id/container_measurement"
         android:layout_width="match_parent"
@@ -95,8 +68,9 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/category_measurement"
-            style="@style/CategoryStyle" />
+            android:id="@+id/text_view_walking"
+            style="@style/CategoryStyle"
+            android:text="@string/walking_category" />
 
         <!-- Input fields -->
         <RelativeLayout
@@ -108,15 +82,10 @@
             <!-- Weight field -->
             <EditText
                 android:id="@+id/edit_walk"
-                android:hint="@string/hint_pet_weight"
+                android:hint="@string/hint_walking_miles"
                 android:inputType="number"
                 style="@style/EditorFieldStyle" />
 
-            <!-- Units for weight (kg) -->
-            <TextView
-                android:id="@+id/label_weight_units"
-                android:text="@string/unit_pet_weight"
-                style="@style/EditorUnitsStyle"/>
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

@@ -49,7 +49,7 @@ public class CatalogActivity extends AppCompatActivity {
 
     /**
      * Temporary helper method to display information in the onscreen TextView about the state of
-     * the pets database.
+     * the habits database.
      */
     private void displayDatabaseInfo() {
         // Create and/or open a database to read from it
@@ -94,7 +94,6 @@ public class CatalogActivity extends AppCompatActivity {
             int nameColumnIndex = cursor.getColumnIndex(HabitContract.HabitEntry.COLUMN_RUNNING);
             int gymColumnIndex = cursor.getColumnIndex(HabitContract.HabitEntry.COLUMN_GYM);
             int walkingColumnIndex = cursor.getColumnIndex(HabitContract.HabitEntry.COLUMN_WALKING);
-
 
             // Iterate through all the returned rows in the cursor
             while (cursor.moveToNext()) {

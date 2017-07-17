@@ -4,48 +4,34 @@
 
     <string name="app_name">HabitTracker</string>
 
-    <!-- Label for overflow menu option that inserts fake pet data into the app [CHAR LIMIT=20] -->
+    <!-- Label for overflow menu option that inserts fake habit data into the app [CHAR LIMIT=20] -->
     <string name="action_insert_dummy_data">Insert Dummy Data</string>
 
-    <!-- Label for overflow menu option that deletes all pet data in the app [CHAR LIMIT=20] -->
-    <string name="action_delete_all_entries">Delete All Pets</string>
+    <!-- Label for overflow menu option that deletes all habit data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Habits</string>
 
-    <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_new_pet">Add a Pet</string>
+    <!-- Title for the activity to add a new exercise activity [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_habit">Add an Activity</string>
 
-    <!-- Label for editor menu option to save pet and leave editor [CHAR LIMIT=20] -->
+    <!-- Label for editor menu option to save habits information and leave editor [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
 
-    <!-- Label for editor overflow menu option that deletes the current pet [CHAR LIMIT=20] -->
+    <!-- Label for editor overflow menu option that deletes the current habit [CHAR LIMIT=20] -->
     <string name="action_delete">Delete</string>
 
     <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
     <string name="text_view_run">Run</string>
 
-    <!-- Label for gender information in the editor [CHAR LIMIT=30] -->
-    <string name="category_gender">Gender</string>
+    <!-- Label for walking activity in the editor [CHAR LIMIT=30] -->
+    <string name="walking_category">Walking</string>
 
-    <!-- Label for measurement information in the editor [CHAR LIMIT=30] -->
-    <string name="category_measurement">Measurement</string>
+    <!-- Text hint for running field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_running_miles">Miles</string>
 
-    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_miles">Miles</string>
+    <!-- Text hint for gym activity field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_gym_activity">Gym Activity</string>
 
-    <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_pet_breed">Breed</string>
+    <!-- Text hint for walking miles field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_walking_miles">Miles</string>
 
-    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_pet_weight">Weight</string>
-
-    <!-- Units for weight of the pet (kilograms) [CHAR LIMIT=5] -->
-    <string name="unit_pet_weight">kg</string>
-
-    <!-- Label for dropdown menu option if the pet's gender is unknown [CHAR LIMIT=20] -->
-    <string name="gender_unknown">Unknown</string>
-
-    <!-- Label for dropdown menu option if the pet is male [CHAR LIMIT=20] -->
-    <string name="gender_male">Male</string>
-
-    <!-- Label for dropdown menu option if the pet is female [CHAR LIMIT=20] -->
-    <string name="gender_female">Female</string>
 </resources>

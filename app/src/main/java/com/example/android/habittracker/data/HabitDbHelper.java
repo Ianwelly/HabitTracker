@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class HabitDbHelper  extends SQLiteOpenHelper{
 
-
         public static final String LOG_TAG = HabitDbHelper.class.getSimpleName();
 
         /** Name of the database file */
@@ -38,7 +37,7 @@ public class HabitDbHelper  extends SQLiteOpenHelper{
             // Create a String that contains the SQL statement to create the habits table
             String SQL_CREATE_HABITS_TABLE =  "CREATE TABLE " + HabitContract.HabitEntry.TABLE_NAME + " ( "
                     + HabitContract.HabitEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + HabitContract.HabitEntry.COLUMN_RUNNING + " TEXT NOT NULL, "
+                    + HabitContract.HabitEntry.COLUMN_RUNNING + " INTEGER NOT NULL, "
                     + HabitContract.HabitEntry.COLUMN_GYM + " TEXT, "
                     + HabitContract.HabitEntry.COLUMN_WALKING + " INTEGER NOT NULL );";
 
