@@ -36,11 +36,11 @@ public class HabitDbHelper  extends SQLiteOpenHelper{
         @Override
         public void onCreate(SQLiteDatabase db) {
             // Create a String that contains the SQL statement to create the habits table
-            String SQL_CREATE_HABITS_TABLE =  "CREATE TABLE " + HabitContract.HabitEntry.TABLE_NAME + " ("
+            String SQL_CREATE_HABITS_TABLE =  "CREATE TABLE " + HabitContract.HabitEntry.TABLE_NAME + " ( "
                     + HabitContract.HabitEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                     + HabitContract.HabitEntry.COLUMN_RUNNING + " TEXT NOT NULL, "
                     + HabitContract.HabitEntry.COLUMN_GYM + " TEXT, "
-                    + HabitContract.HabitEntry.COLUMN_WALKING + " INTEGER NOT NULL,);";
+                    + HabitContract.HabitEntry.COLUMN_WALKING + " INTEGER NOT NULL );";
 
             // Execute the SQL statement
             db.execSQL(SQL_CREATE_HABITS_TABLE);

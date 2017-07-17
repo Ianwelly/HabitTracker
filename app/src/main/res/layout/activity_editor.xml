@@ -28,8 +28,15 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/category_overview"
+            android:text="@string/text_view_run"
             style="@style/CategoryStyle" />
+
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/edit_run"
+            android:hint="@string/hint_miles"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
 
         <!-- Input fields -->
         <LinearLayout
@@ -39,12 +46,7 @@
             android:paddingLeft="4dp"
             android:orientation="vertical">
 
-            <!-- Name field -->
-            <EditText
-                android:id="@+id/edit_run"
-                android:hint="@string/hint_pet_name"
-                android:inputType="textCapWords"
-                style="@style/EditorFieldStyle" />
+
 
             <!-- Breed field -->
             <EditText
