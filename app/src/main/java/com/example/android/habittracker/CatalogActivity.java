@@ -3,7 +3,7 @@ package com.example.android.habittracker;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -13,16 +13,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.android.habittracker.data.HabitContract;
-import com.example.android.habittracker.data.HabitDbHelper;
 
 /**
  * Displays a list of habits that have been entered and stored in the app
  */
 public class CatalogActivity extends AppCompatActivity {
 
-    /** Database helper that will provide us access to the database */
-    private HabitDbHelper mDbHelper;
-
+    /**
+     * Database helper that will provide us access to the database
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +39,9 @@ public class CatalogActivity extends AppCompatActivity {
 
         // To access our database, we instantiate our subclass of SQLiteOpenHelper
         // and pass the context, which is the current activity.
-        mDbHelper = new HabitDbHelper(this);
-    }@Override
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         displayDatabaseInfo();
@@ -52,8 +52,6 @@ public class CatalogActivity extends AppCompatActivity {
      * the habits database.
      */
     private void displayDatabaseInfo() {
-        // Create and/or open a database to read from it
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         // Define a projection that specifies which columns from the database
         // you will actually use after this query.
@@ -63,15 +61,12 @@ public class CatalogActivity extends AppCompatActivity {
                 HabitContract.HabitEntry.COLUMN_GYM,
                 HabitContract.HabitEntry.COLUMN_WALKING,};
 
-        // Perform a query on the inventory table
-        Cursor cursor = db.query(
-                HabitContract.HabitEntry.TABLE_NAME,   // The table to query
-                projection,            // The columns to return
-                null,                  // The columns for the WHERE clause
-                null,                  // The values for the WHERE clause
-                null,                  // Don't group the rows
-                null,                  // Don't filter by row groups
-                null);                   // The sort order
+        Cursor cursor = getContentResolver().query(
+                HabitContract.HabitEntry.CONTENT_URI,   // The content URI of the words table
+                projection,             // The columns to return for each row
+                null,                   // Selection criteria
+                null,                   // Selection criteria
+                null);                  // The sort order for the returned rows
 
         TextView displayView = (TextView) findViewById(R.id.text_view_item);
 
@@ -118,27 +113,17 @@ public class CatalogActivity extends AppCompatActivity {
     }
 
     /**
-     * Helper method to insert hardcoded item data into the database. For debugging purposes only.
+     * Helper method to insert hardcoded pet data into the database. For debugging purposes only.
      */
-    private void insertItem() {
-        // Gets the database in write mode
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
+    private void insertHabit() {
         // Create a ContentValues object where column names are the keys,
-        // and the item's attributes are the values.
+        // and Toto's pet attributes are the values.
         ContentValues values = new ContentValues();
-        values.put(HabitContract.HabitEntry.COLUMN_RUNNING, 3 );
+        values.put(HabitContract.HabitEntry.COLUMN_RUNNING, 3);
         values.put(HabitContract.HabitEntry.COLUMN_GYM, "Push-Ups");
         values.put(HabitContract.HabitEntry.COLUMN_WALKING, 1);
 
-        // Insert a new row for habit in the database, returning the ID of that new row.
-        // The first argument for db.insert() is the Inventory table name.
-        // The second argument provides the name of a column in which the framework
-        // can insert NULL in the event that the ContentValues is empty (if
-        // this is set to "null", then the framework will not insert a row when
-        // there are no values).
-        // The third argument is the ContentValues object containing the info for Apples.
-        long newRowId = db.insert(HabitContract.HabitEntry.TABLE_NAME, null, values);
+        Uri newUri = getContentResolver().insert(HabitContract.HabitEntry.CONTENT_URI, values);
     }
 
     @Override
@@ -155,7 +140,7 @@ public class CatalogActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to a click on the "Insert dummy data" menu option
             case R.id.action_insert_dummy_data:
-                insertItem();
+                insertHabit();
                 displayDatabaseInfo();
                 return true;
             // Respond to a click on the "Delete all entries" menu option
@@ -165,5 +150,5 @@ public class CatalogActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    }
+}
 

@@ -34,4 +34,10 @@
     <!-- Text hint for walking miles field in the editor [CHAR LIMIT=30] -->
     <string name="hint_walking_miles">Miles</string>
 
+    <!-- Toast message in editor when new pet has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_pet_successful">Pet saved</string>
+
+    <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_pet_failed">Error with saving pet</string>
+
 </resources>

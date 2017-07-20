@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -9,10 +8,8 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
--->
-<!-- Layout for the editor -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+--><!-- Layout for the editor -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,36 +25,36 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/text_view_run"
-            style="@style/CategoryStyle" />
+            style="@style/CategoryStyle"
+            android:text="@string/text_view_run" />
 
         <!-- Run miles field -->
         <EditText
             android:id="@+id/edit_run"
+            style="@style/EditorFieldStyle"
             android:hint="@string/hint_running_miles"
-            android:inputType="number"
-            style="@style/EditorFieldStyle" />
+            android:inputType="number" />
     </LinearLayout>
 
-        <!-- Input fields -->
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
+    <!-- Input fields -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-            <!-- Label -->
-            <TextView
-                android:id="@+id/text_view_gym"
-                android:text="Gym"
-                style="@style/CategoryStyle" />
+        <!-- Label -->
+        <TextView
+            android:id="@+id/text_view_gym"
+            style="@style/CategoryStyle"
+            android:text="Gym" />
 
-            <!-- Gym Activity field -->
-            <EditText
-                android:id="@+id/edit_gym"
-                android:hint="@string/hint_gym_activity"
-                android:inputType="textCapWords"
-                style="@style/EditorFieldStyle" />
-        </LinearLayout>
+        <!-- Gym Activity field -->
+        <EditText
+            android:id="@+id/edit_gym"
+            style="@style/EditorFieldStyle"
+            android:hint="@string/hint_gym_activity"
+            android:inputType="textCapWords" />
+    </LinearLayout>
 
     <!-- Walking category -->
     <LinearLayout
@@ -74,17 +71,17 @@
 
         <!-- Input fields -->
         <RelativeLayout
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:paddingLeft="4dp">
 
             <!-- Weight field -->
             <EditText
                 android:id="@+id/edit_walk"
+                style="@style/EditorFieldStyle"
                 android:hint="@string/hint_walking_miles"
-                android:inputType="number"
-                style="@style/EditorFieldStyle" />
+                android:inputType="number" />
 
         </RelativeLayout>
     </LinearLayout>
